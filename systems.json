@@ -1,0 +1,260 @@
+{
+    "gb": {
+        "name": "GameBoy",
+        "format": ["gb"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy/"
+        ]
+    },
+    "gbc": {
+        "name": "GameBoy Color",
+        "format": ["gbc"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy%20Color/"
+        ]
+    },
+    "gba": {
+        "name": "GameBoy Advance",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Game%20Boy%20Advance/"
+        ]
+    },
+    "n64": {
+        "name": "Nintendo 64",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%2064%20(ByteSwapped)/"
+        ]
+    },
+    "nes": {
+        "name": "Nintendo Entertainment System",
+        "format": ["nes"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%20Entertainment%20System%20(Headerless)/"
+        ]
+    },
+    "snes": {
+        "name": "Super Nintendo Entertainment System",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Super%20Nintendo%20Entertainment%20System/"
+        ]
+    },
+    "nds": {
+        "name": "Nintendo DS",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%20DS%20(Decrypted)/"
+        ]
+    },
+    "3ds": {
+        "name": "Nintendo 3DS",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Nintendo%203DS%20(Decrypted)/"
+        ]
+    },
+    "gc": {
+        "name": "Nintendo GameCube",
+        "format": ["iso"],
+        "url": [
+            "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmerica/",
+            "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmericaPart2/",
+            "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmericaPart3/",
+            "https://myrient.erista.me/files/Internet%20Archive/pixelspoil/NCubeJ/",
+            "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/EuropeanGamecubeCollectionByGhostware/",
+            "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/AustraliaGamecubeCollectionByGhostware/",
+            "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/AsiaGamecubeCollectionByGhostware/"
+        ]
+    },
+    "32x": {
+        "name": "Sega 32X",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Sega%20-%2032X/"
+        ]
+    },
+    "gamegear": {
+        "name": "Sega Game Gear",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Sega%20-%20Game%20Gear/"
+        ]
+    },
+    "master": {
+        "name": "Sega Master System",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Sega%20-%20Master%20System%20-%20Mark%20III/"
+        ]
+    },
+    "genesis": {
+        "name": "Sega Genesis",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Sega%20-%20Mega%20Drive%20-%20Genesis/"
+        ]
+    },
+    "dreamcast": {
+        "name": "Sega Dreamcast",
+        "format": ["gdi", "cdi"],
+        "url": [
+            "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/DreamcastCollectionByGhostwareMulti-region/"
+        ]
+    },
+    "saturn": {
+        "name": "Sega Saturn",
+        "format": ["iso", "bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sega%20-%20Saturn/"
+        ]
+    },
+    "segacd": {
+        "name": "Sega CD",
+        "format": ["iso", "bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sega%20-%20Mega%20CD%20&%20Sega%20CD/"
+        ]
+    },
+    "psx": {
+        "name": "Sony PlayStation",
+        "format": ["bin", "cue", "chd"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation/"
+        ]
+    },
+    "ps2": {
+        "name": "Sony PlayStation 2",
+        "format": ["iso", "bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation%202/"
+        ]
+    },
+    "psp": {
+        "name": "Sony PlayStation Portable",
+        "format": ["iso", "cso"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation%20Portable/"
+        ]
+    },
+    "ps3": {
+        "name": "Sony PlayStation 3",
+        "format": ["iso"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Sony%20-%20PlayStation%203/"
+        ]
+    },
+    "vita": {
+        "name": "Sony PlayStation Vita",
+        "format": ["vpk", "zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Unofficial%20-%20Sony%20-%20PlayStation%20Vita%20(VPK)/"
+        ]
+    },
+    "xbox": {
+        "name": "Microsoft Xbox",
+        "format": ["iso"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Microsoft%20-%20Xbox/"
+        ]
+    },
+    "xbox360": {
+        "name": "Microsoft Xbox 360",
+        "format": ["iso"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Microsoft%20-%20Xbox%20360/"
+        ]
+    },
+    "atari2600": {
+        "name": "Atari 2600",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Atari%20-%202600/"
+        ]
+    },
+    "atari5200": {
+        "name": "Atari 5200",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Atari%20-%205200/"
+        ]
+    },
+    "atari7800": {
+        "name": "Atari 7800",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/Atari%20-%207800/"
+        ]
+    },
+    "pcengine": {
+        "name": "NEC PC Engine",
+        "format": ["zip"],
+        "url": [
+            "https://myrient.erista.me/files/No-Intro/NEC%20-%20PC%20Engine%20-%20TurboGrafx-16/"
+        ]
+    },
+    "pcenginecd": {
+        "name": "NEC PC Engine CD",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/NEC%20-%20PC%20Engine%20CD%20&%20TurboGrafx%20CD/"
+        ]
+    },
+    "pcfx": {
+        "name": "NEC PC-FX",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/NEC%20-%20PC-FX%20&%20PC-FXGA/"
+        ]
+    },
+    "pc98": {
+        "name": "NEC PC-98",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/NEC%20-%20PC-98%20series/"
+        ]
+    },
+    "pippin": {
+        "name": "Apple Pippin",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Bandai%20-%20Pippin/"
+        ]
+    },
+    "fmtowns": {
+        "name": "Fujitsu FM Towns",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Fujitsu%20-%20FM-Towns/"
+        ]
+    },
+    "3d0": {
+        "name": "Panasonic 3DO",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Panasonic%20-%203DO%20Interactive%20Multiplayer/"
+        ]
+    },
+    "cdi": {
+        "name": "Philips CD-i",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Philips%20-%20CD-i/"
+        ]
+    },
+    "neogeo": {
+        "name": "SNK Neo Geo",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/SNK%20-%20Neo%20Geo%20CD/"
+        ]
+    },
+    "jaguar": {
+        "name": "Atari Jaguar",
+        "format": ["bin", "cue"],
+        "url": [
+            "https://myrient.erista.me/files/Redump/Atari%20-%20Jaguar%20CD%20Interactive%20Multimedia%20System/"
+        ]
+    }
+}
