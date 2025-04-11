@@ -222,7 +222,7 @@ class Cleaner:
 
     def scan(self):
         groups = {}
-        for root, dirs, files in os.walk("."):
+        for root, dirs, files in os.walk("roms"):
             dirs[:] = [d for d in dirs if not d.startswith('.')]
             for f in files:
                 if f.startswith('.') or f.lower().endswith(self.skip_ext): continue
