@@ -259,14 +259,9 @@
     },
     "mame": {
         "name": "MAME",
-        "format": ["cmd", "neo"],
+        "format": ["cmd", "neo", "zip"],
         "url": [
-            "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-sl/mame-sl/",
-            "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged/",
-            "https://myrient.erista.me/files/Internet%20Archive/aberusugi/hbmame_0244_roms/",
-            "https://myrient.erista.me/files/Internet%20Archive/rompacker/mame-chds-roms-extras-complete/MAME%200.252%20ROMs%20%28merged%29/",
-            "https://myrient.erista.me/files/Internet%20Archive/rompacker/mame-chds-roms-extras-complete/MAME%200.254%20ROMs%20%28merged%29/",
-            "https://myrient.erista.me/files/Internet%20Archive/rompacker/mame-chds-roms-extras-complete/MAME%200.256%20ROMs%20%28merged%29/"
+            "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged/"
         ]
     }
 }
