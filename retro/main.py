@@ -192,7 +192,7 @@ class Manager:  # Main package manager class
             out = []
             for p in self.files:
                 system_match = not inc or p["system"].lower() in inc
-                name_match = not kw or any(k.lower() in p["name"].lower() for k in kw)
+                name_match = not kw or all(k.lower() in p["name"].lower() for k in kw)
                 exclude_match = not exc or not any(e.lower() in p["name"].lower() for e in exc)
                 if system_match and name_match and exclude_match: out.append(p)
         
@@ -331,7 +331,7 @@ class Manager:  # Main package manager class
             out = []
             for p in all_files:
                 system_match = not inc or p["system"].lower() in inc
-                name_match = not kw or any(k.lower() in p["name"].lower() for k in kw)
+                name_match = not kw or all(k.lower() in p["name"].lower() for k in kw)
                 exclude_match = not exc or not any(e.lower() in p["name"].lower() for e in exc)
                 if system_match and name_match and exclude_match: out.append(p)
         
