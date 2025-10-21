@@ -169,7 +169,7 @@
     ],
     "name": "Sega Dreamcast",
     "url": [
-      "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/DreamcastCollectionByGhostwareMulti-region/"
+      "https://myrient.erista.me/files/Redump/Sega%20-%20Dreamcast/"
     ]
   },
   "fmtowns": {
@@ -277,13 +277,7 @@
     ],
     "name": "Nintendo GameCube",
     "url": [
-      "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmerica/",
-      "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmericaPart2/",
-      "https://myrient.erista.me/files/Internet%20Archive/Unknown/RedumpNintendoGameCubeAmericaPart3/",
-      "https://myrient.erista.me/files/Internet%20Archive/pixelspoil/NCubeJ/",
-      "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/EuropeanGamecubeCollectionByGhostware/",
-      "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/AustraliaGamecubeCollectionByGhostware/",
-      "https://myrient.erista.me/files/Internet%20Archive/kodi_amp_spmc_canada/AsiaGamecubeCollectionByGhostware/"
+      "https://myrient.erista.me/files/Redump/Nintendo%20-%20GameCube%20-%20NKit%20RVZ%20[zstd-19-128k]/"
     ]
   },
   "genesis": {
@@ -731,7 +725,7 @@
       "https://myrient.erista.me/files/No-Intro/Nintendo%20-%20Virtual%20Boy/"
     ]
   },
-  "vita": {
+  "psvita": {
     "format": [
       "vpk",
       "zip"
@@ -740,6 +734,39 @@
     "url": [
       "https://myrient.erista.me/files/No-Intro/Unofficial%20-%20Sony%20-%20PlayStation%20Vita%20(VPK)/"
     ]
+  },
+  "wii": {
+    "format": [
+      "ciso",
+      "dff",
+      "dol",
+      "elf",
+      "gcm",
+      "gcz",
+      "iso",
+      "json",
+      "m3u",
+      "rvz",
+      "tgc",
+      "wad",
+      "wbfs",
+      "wia"
+    ],
+    "name": "Nintendo Wii",
+    "url": ["https://myrient.erista.me/files/Redump/Nintendo%20-%20Wii%20-%20NKit%20RVZ%20[zstd-19-128k]/"]
+  },
+  "wiiu": {
+    "format": [
+      "elf",
+      "rpx",
+      "tmd",
+      "wua",
+      "wud",
+      "wuhb",
+      "wux"
+    ],
+    "name": "Nintendo Wii U",
+    "url": ["https://myrient.erista.me/files/Internet%20Archive/teamgt19/nintendo-wii-u-usa-full-set-wua-format-embedded-dlc-updates/"]
   },
   "wonderswan": {
     "format": [
