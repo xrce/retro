@@ -212,12 +212,41 @@ class Manager:  # Main package manager class
             print(f"{system_colored} {size_str} ({count})")
             
             for f in sys_files:
+                # Check if game is already installed
+                bn = os.path.splitext(f["name"])[0]
+                system_dir = os.path.join(self.settings["roms_dir"], sys_name)
+                is_installed = False
+                if os.path.exists(system_dir):
+                    for existing_file in os.listdir(system_dir):
+                        if os.path.isfile(os.path.join(system_dir, existing_file)):
+                            existing_bn = os.path.splitext(existing_file)[0]
+                            if existing_bn == bn:
+                                is_installed = True
+                                break
+                
                 size_colored = f"\033[33m({format_size(f.get('size_bytes', 0))})\033[0m"
-                print(f"  {size_colored} {f['name']}")
+                status = " \033[92m[installed]\033[0m" if is_installed else ""
+                print(f"  {size_colored} {f['name']}{status}")
             print()
         
-        total_size = sum(f.get("size_bytes", 0) for f in out)
-        print(f"Total: {format_size(total_size)} ({len(out)} packages)")
+        # Calculate total size only for packages that are not already installed
+        new_packages = []
+        for f in out:
+            bn = os.path.splitext(f["name"])[0]
+            system_dir = os.path.join(self.settings["roms_dir"], f["system"])
+            is_installed = False
+            if os.path.exists(system_dir):
+                for existing_file in os.listdir(system_dir):
+                    if os.path.isfile(os.path.join(system_dir, existing_file)):
+                        existing_bn = os.path.splitext(existing_file)[0]
+                        if existing_bn == bn:
+                            is_installed = True
+                            break
+            if not is_installed:
+                new_packages.append(f)
+        
+        total_size = sum(f.get("size_bytes", 0) for f in new_packages)
+        print(f"Total: {format_size(total_size)} ({len(new_packages)} packages)" + (f" ({len(out) - len(new_packages)} installed)" if len(out) > len(new_packages) else ""))
         return out
 
     def install(self, pkgs):  # Install packages with progress bar
@@ -229,14 +258,20 @@ class Manager:  # Main package manager class
             dest, tmp = os.path.join(self.settings["roms_dir"], f["system"]), os.path.join(self.settings["roms_dir"], f["system"], "tmp")
             os.makedirs(dest, exist_ok=True); os.makedirs(tmp, exist_ok=True)
             
+            # Check if exact file already exists
             if os.path.exists(os.path.join(dest, f["name"])): 
-                with stats_lock: stats["pending"] -= 1
+                with stats_lock: stats["pending"] -= 1; stats["done"] += 1
                 return ("skipped", f)
                 
+            # Check if game with same base name already exists (without extension)
             bn = os.path.splitext(f["name"])[0]
-            if any(os.path.splitext(x)[0] == bn for x in os.listdir(dest) if os.path.isfile(os.path.join(dest, x))): 
-                with stats_lock: stats["pending"] -= 1
-                return ("skipped", f)
+            if os.path.exists(dest):
+                for existing_file in os.listdir(dest):
+                    if os.path.isfile(os.path.join(dest, existing_file)):
+                        existing_bn = os.path.splitext(existing_file)[0]
+                        if existing_bn == bn:
+                            with stats_lock: stats["pending"] -= 1; stats["done"] += 1
+                            return ("skipped", f)
             
             tmp_path = os.path.join(tmp, f["name"])
             url = f["base"].rstrip("/") + "/" + f["link"]
@@ -260,7 +295,10 @@ class Manager:  # Main package manager class
         with tqdm(total=100, desc="Installing", bar_format='{desc}: {percentage:3.0f}%', ncols=60, leave=False) as pbar:
             with ThreadPoolExecutor(max_workers=self.settings["install_workers"]) as exe:
                 futures = {exe.submit(worker, pkg): pkg for pkg in pkgs}
+                results = []
                 for fut in as_completed(futures): 
+                    result = fut.result()
+                    results.append(result)
                     desc = f"\033[90m⋯{stats['pending']}\033[0m \033[33m↓{stats['downloading']}\033[0m \033[36m⚙{stats['extracting']}\033[0m \033[92m✓{stats['done']}\033[0m \033[91m✗{stats['failed']}\033[0m"
                     pbar.set_description(desc)
                     progress = int(((stats['done'] + stats['failed']) / len(pkgs)) * 100)
@@ -270,7 +308,15 @@ class Manager:  # Main package manager class
             tmp_dir = os.path.join(self.settings["roms_dir"], sys_name, "tmp")
             if os.path.exists(tmp_dir) and not os.listdir(tmp_dir): shutil.rmtree(tmp_dir)
         
-        print(f"\033[92m✓ {stats['done']}\033[0m installed, \033[91m✗ {stats['failed']}\033[0m failed")
+        # Count different types of results
+        installed_count = sum(1 for r in results if r[0] == "done")
+        skipped_count = sum(1 for r in results if r[0] == "skipped")
+        failed_count = sum(1 for r in results if r[0] == "error")
+        
+        if skipped_count > 0:
+            print(f"\033[92m✓ {installed_count}\033[0m installed, \033[93m⏭ {skipped_count}\033[0m skipped (installed), \033[91m✗ {failed_count}\033[0m failed")
+        else:
+            print(f"\033[92m✓ {installed_count}\033[0m installed, \033[91m✗ {failed_count}\033[0m failed")
 
     def list(self):  # List installed games by system
         try: self.systems = json.load(open(self.cfg))
