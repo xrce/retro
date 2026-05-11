@@ -87,6 +87,15 @@ class Manager:  # Main package manager class
         self.cfg = cfg or os.path.join(self.config_dir, "systems.json")
         self.settings = load_settings()
         self.systems, self.files = {}, []
+        self._ensure_systems_json()
+
+    def _ensure_systems_json(self):  # Ensure systems.json exists in config dir
+        if os.path.exists(self.cfg): return
+        # Find systems.json relative to package directory
+        pkg_dir = os.path.dirname(os.path.abspath(__file__))
+        source = os.path.normpath(os.path.join(pkg_dir, "..", "systems.json"))
+        if os.path.exists(source):
+            shutil.copy(source, self.cfg)
 
     def load(self):  # Load systems configuration
         try: self.systems = json.load(open(self.cfg)); return True
@@ -174,7 +183,9 @@ class Manager:  # Main package manager class
             
             for f in sys_files:
                 bn = os.path.splitext(f["name"])[0]
-                is_installed = any(os.path.splitext(x)[0] == bn for x in os.listdir(system_dir) if os.path.exists(system_dir) and os.path.isfile(os.path.join(system_dir, x)))
+                is_installed = False
+                if os.path.exists(system_dir):
+                    is_installed = any(os.path.splitext(x)[0] == bn for x in os.listdir(system_dir) if os.path.isfile(os.path.join(system_dir, x)))
                 status = " \033[92m[installed]\033[0m" if is_installed else ""
                 size_colored = f"\033[33m({format_size(f.get('size_bytes', 0))})\033[0m"
                 print(f"  {size_colored} {f['name']}{status}")
